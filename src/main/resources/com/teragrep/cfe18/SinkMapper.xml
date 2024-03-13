@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teragrep.cfe18.SinkMapper">
+
+    <!-- Get Sink by ID -->
+    <select id="getSinkById" resultMap="Sink" statementType="CALLABLE">
+        {CALL flow.retrieve_sink_by_id(#{id})}
+    </select>
+    <resultMap type="com.teragrep.cfe18.handlers.entities.Sink" id="Sink">
+        <result property="ip_address" column="ip"/>
+        <result property="port" column="port"/>
+        <result property="protocol" column="protocol"/>
+        <result property="flow" column="flow"/>
+    </resultMap>
+
+
+    <!-- Insert new sink -->
+    <select id="addNewSink" resultMap="insertedID" statementType="CALLABLE">
+        {CALL
+        flow.add_sink(#{param1},#{param2},#{param3},#{param4})}
+    </select>
+    <resultMap id="insertedID" type="com.teragrep.cfe18.handlers.entities.Sink">
+        <result property="id" column="last"/>
+    </resultMap>
+
+
+    <!-- GET ALL Sinks -->
+    <select id="getAllSinks" resultMap="getAllSink" statementType="CALLABLE">
+        {CALL flow.retrieve_all_sinks()}
+    </select>
+    <resultMap type="com.teragrep.cfe18.handlers.entities.Sink" id="getAllSink">
+        <result property="id" column="id"/>
+        <result property="ip_address" column="ip"/>
+        <result property="port" column="port"/>
+        <result property="protocol" column="protocol"/>
+        <result property="flow" column="flow"/>
+    </resultMap>
+
+
+    <!-- Delete -->
+    <select id="deleteSinkById" statementType="CALLABLE">
+        {CALL flow.remove_sink(#{param1})}
+    </select>
+
+</mapper>
+

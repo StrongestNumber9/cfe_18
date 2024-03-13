@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <flow.flows id="1" name="flow1"/>
+    <flow.flows id="2" name="flow2"/>
+    <flow.L7 id="1" app_protocol="prot1"/>
+    <flow.L7 id="2" app_protocol="prot2"/>
+    <flow.L7 id="3" app_protocol="prot3"/>
+    <flow.capture_sink id="1" L7_id="1" flow_id="2" ip_address="ip11" sink_port="601"/>
+    <flow.capture_sink id="2" L7_id="1" flow_id="1" ip_address="ip55" sink_port="601"/>
+    <flow.capture_sink id="3" L7_id="3" flow_id="2" ip_address="ip1" sink_port="1234"/>
+</dataset>

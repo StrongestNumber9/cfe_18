@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teragrep.cfe18.FlowMapper">
+
+    <!-- Insert new flow -->
+    <select id="addNewFlow" resultMap="insertedID" statementType="CALLABLE">
+        {CALL
+        flow.add_flow(#{param1})}
+    </select>
+    <resultMap id="insertedID" type="com.teragrep.cfe18.handlers.entities.Flow">
+        <result property="name" column="name"/>
+        <result property="id" column="last"/>
+    </resultMap>
+
+
+    <!-- Get ALL Flows -->
+    <select id="getAllFlow" resultMap="allFlow" statementType="CALLABLE">
+        {CALL flow.retrieve_all_flows()}
+    </select>
+    <resultMap id="allFlow" type="com.teragrep.cfe18.handlers.entities.Flow">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+
+
+    <!-- Delete -->
+    <select id="deleteFlow" statementType="CALLABLE">
+        {CALL flow.remove_flow(#{param1})}
+    </select>
+
+</mapper>
+

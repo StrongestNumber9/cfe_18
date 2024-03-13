@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teragrep.cfe18.FileCaptureMetaMapper">
+
+    <!-- fetch processing type by name -->
+    <select id="getProcessingTypeByName" resultMap="processingType" statementType="CALLABLE">
+        {CALL cfe_18.retrieve_processing_type_by_name(#{name})}
+    </select>
+    <resultMap type="com.teragrep.cfe18.handlers.entities.FileCaptureMeta" id="processingType">
+        <result property="inputtype" column="inputtype"/>
+        <result property="template" column="template"/>
+        <result property="ruleset" column="ruleset"/>
+        <result property="inputvalue" column="inputvalue"/>
+        <result property="name" column="name"/>
+    </resultMap>
+
+
+    <!-- Insert new one -->
+    <select id="addNewProcessingType" resultMap="insertedName" statementType="CALLABLE">
+        {CALL
+        cfe_18.create_data_for_processing_type(#{arg0},#{arg1},#{arg2},#{arg3},#{arg4})}
+    </select>
+    <resultMap id="insertedName" type="com.teragrep.cfe18.handlers.entities.FileCaptureMeta">
+        <result property="name" column="name"/>
+    </resultMap>
+
+    <!-- GET ALL -->
+    <select id="getAllProcessingType" resultMap="allProcessingType" statementType="CALLABLE">
+        {CALL cfe_18.retrieve_all_processing_types()}
+    </select>
+    <resultMap id="allProcessingType" type="com.teragrep.cfe18.handlers.entities.FileCaptureMeta">
+        <result property="name" column="name"/>
+        <result property="inputtype" column="inputtype"/>
+        <result property="inputvalue" column="inputvalue"/>
+        <result property="ruleset" column="ruleset"/>
+        <result property="template" column="template"/>
+    </resultMap>
+
+    <!-- delete -->
+    <select id="deleteProcessingType" statementType="CALLABLE">
+        {call cfe_18.remove_processing_type(#{param1})}
+    </select>
+
+
+</mapper>
+

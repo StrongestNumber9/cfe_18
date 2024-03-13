@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teragrep.cfe18.CaptureGroupMapper">
+
+
+    <!-- GET BY NAME -->
+    <select id="getCaptureGroupByName" resultMap="captureGroupByName" statementType="CALLABLE">
+        {CALL cfe_18.retrieve_capture_group_details(#{capture_def_group_name})}
+    </select>
+    <resultMap type="com.teragrep.cfe18.handlers.entities.CaptureGroup" id="captureGroupByName">
+        <result property="capture_def_group_name" column="group_name"/>
+        <result property="capture_definition_id" column="capture_definition_id"/>
+        <result property="capture_group_type" column="capture_type"/>
+        <result property="id" column="capture_group_id"/>
+    </resultMap>
+
+
+    <!-- Insert new one -->
+    <select id="addNewCaptureGroup" resultMap="insertedID" statementType="CALLABLE">
+        {CALL
+        cfe_18.add_capture_group_with_capture(#{param1},#{param2})}
+    </select>
+    <resultMap id="insertedID" type="com.teragrep.cfe18.handlers.entities.CaptureGroup">
+        <result property="capture_def_group_name" column="name"/>
+        <result property="id" column="last"/>
+    </resultMap>
+
+
+    <!-- GET ALL -->
+    <select id="getAllCaptureGroup" resultMap="allCaptureGroup" statementType="CALLABLE">
+        {CALL cfe_18.retrieve_all_capture_groups()}
+    </select>
+    <resultMap id="allCaptureGroup" type="com.teragrep.cfe18.handlers.entities.CaptureGroup">
+        <result property="capture_def_group_name" column="group_name"/>
+        <result property="capture_group_type" column="group_type"/>
+        <result property="tag" column="capture_tag"/>
+        <result property="capture_definition_id" column="capture_id"/>
+    </resultMap>
+
+
+    <!-- Delete -->
+    <select id="deleteCaptureGroup" statementType="CALLABLE">
+        {CALL cfe_18.remove_capture_group(#{param1})}
+    </select>
+
+</mapper>
+

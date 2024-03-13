@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <flow.flows id="1" name="flow1"/>
+    <flow.L7 id="1" app_protocol="prot1"/>
+    <flow.capture_sink id="1" L7_id="1" flow_id="1" ip_address="ip1" sink_port="601"/>
+    <cfe_18.ruleset id="1" rule="ruleset1"/>
+    <cfe_18.templates id="1" template="template1"/>
+    <cfe_18.inputtype id="1" inputtype="regex"/>
+    <cfe_18.inputtype id="2" inputtype="newline"/>
+    <cfe_18.newline id="2" newline="placeholder" inputtype="newline"/>
+    <cfe_18.regex id="1" regex="normalRegex" inputtype="regex"/>
+    <cfe_18.processing_type id="1" inputtype_id="1" ruleset_id="1" template_id="1" type_name="usesregex"
+    />
+    <cfe_18.processing_type id="2" inputtype_id="2" ruleset_id="1" template_id="1" type_name="usesNewline"
+    />
+    <cfe_18.tags id="1" tag="tag1"/>
+    <cfe_18.tags id="10" tag="tag10"/>
+    <cfe_18.tags id="11" tag="tag11"/>
+    <cfe_18.tags id="12" tag="tag12"/>
+    <cfe_18.tags id="2" tag="tag2"/>
+    <cfe_18.tags id="3" tag="tag3"/>
+    <cfe_18.tags id="4" tag="tag4"/>
+    <cfe_18.tags id="5" tag="tag5"/>
+    <cfe_18.tags id="6" tag="tag6"/>
+    <cfe_18.tags id="7" tag="tag7"/>
+    <cfe_18.tags id="8" tag="tag8"/>
+    <cfe_18.tags id="9" tag="tag9"/>
+    <cfe_18.application id="1" app="app1"/>
+    <cfe_18.retentionTime id="1" retention="P30D"/>
+    <cfe_18.captureIndex id="1" captureIndex="index1"/>
+    <cfe_18.captureSourcetype id="1" captureSourceType="sourcetype1"/>
+    <cfe_18.category id="1" category="audit"/>
+    <cfe_18.capture_type id="1" capture_type="cfe"/>
+    <cfe_18.capture_type id="2" capture_type="cfe"/>
+    <cfe_18.capture_type id="3" capture_type="relp"/>
+    <cfe_18.capture_meta_file id="1" capturePath="capPathRegex" tagPath="tagPathRegex" processing_type_id="1"
+                              capture_type="cfe"/>
+    <cfe_18.capture_meta_file id="2" capturePath="capPathNewline" tagPath="tagPathNewline" processing_type_id="2"
+                              capture_type="cfe"/>
+    <cfe_18.capture_definition id="1" tag_id="1" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="2" tag_id="2" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="3" tag_id="3" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="4" tag_id="4" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="5" tag_id="5" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="6" tag_id="10" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="7" tag_id="7" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="8" tag_id="8" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="9" tag_id="9" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="10" tag_id="9" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="11" tag_id="7" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="12" tag_id="10" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="cfe" capture_type_id="1" L7_id="1"
+                               flow_id="1"/>
+    <cfe_18.capture_definition id="13" tag_id="1" application_id="1" captureIndex_id="1" retentionTime_id="1"
+                               captureSourcetype_id="1" category_id="1" capture_type="relp" capture_type_id="3"
+                               L7_id="1" flow_id="1"/>
+    <cfe_18.capture_def_group id="1" capture_def_group_name="capturegroup1" capture_type="cfe"/>
+    <cfe_18.capture_def_group id="2" capture_def_group_name="capturegroup2" capture_type="cfe"/>
+    <cfe_18.capture_def_group id="3" capture_def_group_name="capturegroup3" capture_type="cfe"/>
+    <cfe_18.capture_def_group id="4" capture_def_group_name="capturegroup4" capture_type="cfe"/>
+    <cfe_18.capture_def_group id="5" capture_def_group_name="capturegroup5" capture_type="cfe"/>
+    <cfe_18.capture_def_group id="6" capture_def_group_name="capturegroup6" capture_type="cfe"/>
+    <cfe_18.capture_def_group id="7" capture_def_group_name="capturegroup7" capture_type="relp"/>
+    <cfe_18.capture_def_group_x_capture_def id="1" capture_def_id="1" capture_def_group_id="1" tag_id="1"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="2" capture_def_id="2" capture_def_group_id="1" tag_id="2"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="3" capture_def_id="3" capture_def_group_id="1" tag_id="3"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="4" capture_def_id="4" capture_def_group_id="1" tag_id="4"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="5" capture_def_id="5" capture_def_group_id="2" tag_id="5"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="6" capture_def_id="6" capture_def_group_id="2" tag_id="10"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="7" capture_def_id="7" capture_def_group_id="2" tag_id="7"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="8" capture_def_id="2" capture_def_group_id="2" tag_id="2"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="9" capture_def_id="10" capture_def_group_id="3" tag_id="9"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="10" capture_def_id="8" capture_def_group_id="4" tag_id="8"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="11" capture_def_id="12" capture_def_group_id="5" tag_id="10"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="12" capture_def_id="8" capture_def_group_id="6" tag_id="8"
+                                            capture_type="cfe"/>
+    <cfe_18.capture_def_group_x_capture_def id="13" capture_def_id="13" capture_def_group_id="7" tag_id="1"
+                                            capture_type="relp"/>
+    <location.host id="1" fqhost="1" MD5="12365" host_type="cfe"/>
+    <location.host id="2" fqhost="12" MD5="12322" host_type="cfe"/>
+    <location.host id="3" fqhost="13" MD5="1323" host_type="cfe"/>
+    <location.host id="4" fqhost="14" MD5="4123" host_type="cfe"/>
+    <location.host id="5" fqhost="15" MD5="5123" host_type="cfe"/>
+    <location.host id="6" fqhost="16" MD5="6123" host_type="cfe"/>
+    <location.host id="7" fqhost="17" MD5="7123" host_type="cfe"/>
+    <location.host id="8" fqhost="18" MD5="71233" host_type="cfe"/>
+    <location.host id="9" fqhost="19" MD5="723" host_type="cfe"/>
+    <location.host id="10" fqhost="135" MD5="712362" host_type="cfe"/>
+    <location.host id="11" fqhost="156" MD5="712213123" host_type="cfe"/>
+    <location.host id="12" fqhost="1644" MD5="712653" host_type="cfe"/>
+    <location.host id="15" fqhost="177" MD5="75757122173123" host_type="cfe"/>
+    <location.host id="16" fqhost="188" MD5="712" host_type="cfe"/>
+    <location.host id="17" fqhost="133" MD5="71211233" host_type="cfe"/>
+    <location.host id="21" fqhost="122" MD5="7142213123" host_type="cfe"/>
+    <location.host id="22" fqhost="111" MD5="7125213123" host_type="cfe"/>
+    <location.host id="23" fqhost="1988" MD5="7122613123" host_type="cfe"/>
+    <location.host id="24" fqhost="19999" MD5="7122173123" host_type="cfe"/>
+    <location.host_group id="1" groupName="host_group_1" host_type="cfe"/>
+    <location.host_group id="2" groupName="host_group_2" host_type="cfe"/>
+    <location.host_group id="3" groupName="host_group_3" host_type="cfe"/>
+    <location.host_group id="4" groupName="host_group_4" host_type="cfe"/>
+    <location.host_group id="5" groupName="host_group_5" host_type="cfe"/>
+    <location.host_group id="6" groupName="host_group_6" host_type="cfe"/>
+    <location.host_group_x_host id="1" host_group_id="1" host_id="1" host_type="cfe"/>
+    <location.host_group_x_host id="2" host_group_id="1" host_id="2" host_type="cfe"/>
+    <location.host_group_x_host id="3" host_group_id="1" host_id="3" host_type="cfe"/>
+    <location.host_group_x_host id="4" host_group_id="1" host_id="4" host_type="cfe"/>
+    <location.host_group_x_host id="5" host_group_id="2" host_id="5" host_type="cfe"/>
+    <location.host_group_x_host id="6" host_group_id="2" host_id="6" host_type="cfe"/>
+    <location.host_group_x_host id="7" host_group_id="2" host_id="7" host_type="cfe"/>
+    <location.host_group_x_host id="8" host_group_id="2" host_id="16" host_type="cfe"/>
+    <location.host_group_x_host id="9" host_group_id="3" host_id="9" host_type="cfe"/>
+    <location.host_group_x_host id="10" host_group_id="3" host_id="8" host_type="cfe"/>
+    <location.host_group_x_host id="11" host_group_id="3" host_id="10" host_type="cfe"/>
+    <location.host_group_x_host id="12" host_group_id="3" host_id="12" host_type="cfe"/>
+    <location.host_group_x_host id="13" host_group_id="4" host_id="17" host_type="cfe"/>
+    <location.host_group_x_host id="14" host_group_id="4" host_id="11" host_type="cfe"/>
+    <location.host_group_x_host id="15" host_group_id="5" host_id="21" host_type="cfe"/>
+    <location.host_group_x_host id="16" host_group_id="5" host_id="22" host_type="cfe"/>
+    <location.host_group_x_host id="17" host_group_id="6" host_id="23" host_type="cfe"/>
+    <location.host_group_x_host id="18" host_group_id="6" host_id="24" host_type="cfe"/>
+    <cfe_18.host_groups_x_capture_def_group id="1" host_group_id="1" capture_group_id="1"/>
+    <cfe_18.host_groups_x_capture_def_group id="2" host_group_id="2" capture_group_id="2"/>
+    <cfe_18.host_groups_x_capture_def_group id="3" host_group_id="3" capture_group_id="3"/>
+    <cfe_18.host_groups_x_capture_def_group id="6" host_group_id="4" capture_group_id="4"/>
+    <cfe_18.host_groups_x_capture_def_group id="7" host_group_id="5" capture_group_id="5"/>
+</dataset>

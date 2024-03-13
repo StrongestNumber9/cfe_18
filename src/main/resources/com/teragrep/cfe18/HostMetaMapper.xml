@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teragrep.cfe18.HostMetaMapper">
+
+    <!-- retrieve mapping for host meta -->
+    <select id="getHostMetaById" resultMap="HostMeta" statementType="CALLABLE">
+        {CALL cfe_03.retrieve_host_meta(#{id})}
+    </select>
+    <resultMap type="com.teragrep.cfe18.handlers.entities.HostMeta" id="HostMeta">
+        <result property="id" column="host_meta_id"/>
+        <result property="arch" column="arch"/>
+        <result property="release_version" column="release_version"/>
+        <result property="flavor" column="flavor"/>
+        <result property="os" column="os"/>
+        <result property="interfaceType" column="interface"/>
+        <result property="ipAddress" column="ip_address"/>
+        <result property="hostname" column="hostname"/>
+        <result property="host_id" column="host_id"/>
+    </resultMap>
+
+
+    <!--select mapping for adding-->
+    <select id="addHostMeta" resultMap="insertedID" statementType="CALLABLE">
+        {CALL
+        cfe_03.add_host_meta_data(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6})}
+    </select>
+    <resultMap id="insertedID" type="com.teragrep.cfe18.handlers.entities.HostMeta">
+        <result property="id" column="last"/>
+    </resultMap>
+
+
+    <!-- Insert new interface for host_meta -->
+    <select id="addInterface_type" resultMap="interfaceId" statementType="CALLABLE">
+        {CALL
+        cfe_03.add_interface(#{param1},#{param2})}
+    </select>
+    <resultMap id="interfaceId" type="com.teragrep.cfe18.handlers.entities.InterfaceType">
+        <result property="host_meta_id" column="last"/>
+    </resultMap>
+
+
+    <!-- Insert Ip address for host_meta -->
+    <select id="addIpAddress" resultMap="ipId" statementType="CALLABLE">
+        {CALL cfe_03.add_ip_address(#{param1},#{param2})}
+    </select>
+    <resultMap id="ipId" type="com.teragrep.cfe18.handlers.entities.IPAddress">
+        <result property="host_meta_id" column="last"/>
+    </resultMap>
+
+
+    <!-- Get ALL Host meta -->
+    <select id="getAllHostMeta" resultMap="allHostMeta" statementType="CALLABLE">
+        {CAll cfe_03.retrieve_all_host_metas()}
+    </select>
+    <resultMap id="allHostMeta" type="com.teragrep.cfe18.handlers.entities.HostMeta">
+        <result property="id" column="host_meta_id"/>
+        <result property="host_id" column="host_id"/>
+        <result property="hostname" column="host_name"/>
+        <result property="os" column="os"/>
+        <result property="flavor" column="flavor"/>
+        <result property="arch" column="arch"/>
+        <result property="release_version" column="release_version"/>
+    </resultMap>
+
+
+    <!-- GET ALL Ip -->
+    <select id="getAllHostMetaIp" resultMap="allHostMetaIp" statementType="CALLABLE">
+        {CAll cfe_03.retrieve_all_host_ip_addresses()}
+    </select>
+    <resultMap id="allHostMetaIp" type="com.teragrep.cfe18.handlers.entities.IPAddress">
+        <result property="ipAddress" column="ip_address"/>
+        <result property="host_meta_id" column="host_meta_id"/>
+    </resultMap>
+
+
+    <!-- GET ALL Interface -->
+    <select id="getAllHostMetaInterface" resultMap="allHostMetaInterface" statementType="CALLABLE">
+        {CAll cfe_03.retrieve_all_host_interfaces()}
+    </select>
+    <resultMap id="allHostMetaInterface" type="com.teragrep.cfe18.handlers.entities.InterfaceType">
+        <result property="interfaceType" column="interface"/>
+        <result property="host_meta_id" column="host_meta_id"/>
+    </resultMap>
+
+
+    <!-- Delete -->
+    <select id="deleteIp" statementType="CALLABLE">
+        {CALL cfe_03.remove_hostmeta_ip(#{param1})}
+    </select>
+
+    <select id="deleteInterface" statementType="CALLABLE">
+        {CALL cfe_03.remove_hostmeta_interface(#{param1})}
+    </select>
+
+    <select id="deleteHostmeta" statementType="CALLABLE">
+        {CALL cfe_03.remove_hostmeta(#{param1})}
+    </select>
+
+</mapper>
+

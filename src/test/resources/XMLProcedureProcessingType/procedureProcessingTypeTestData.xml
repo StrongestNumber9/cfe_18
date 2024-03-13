@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <cfe_18.inputtype id="1" inputtype="regex"/>
+    <cfe_18.inputtype id="2" inputtype="newline"/>
+    <cfe_18.regex id="1" regex="YourNormalRegex" inputtype="regex"/>
+    <cfe_18.newline id="2" newline="NewlineForNewbies" inputtype="newline"/>
+    <cfe_18.ruleset id="1" rule="RulesAreMadeToBeBroken"/>
+    <cfe_18.templates id="1" template="TemplateForBaking"/>
+    <cfe_18.processing_type id="1" inputtype_id="1" ruleset_id="1" template_id="1" type_name="name1"/>
+    <cfe_18.processing_type id="2" inputtype_id="2" ruleset_id="1" template_id="1" type_name="name2"/>
+</dataset>

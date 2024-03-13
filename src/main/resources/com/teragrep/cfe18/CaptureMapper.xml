@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teragrep.cfe18.CaptureMapper">
+
+    <!-- cfe based fetching -->
+    <select id="getCaptureFileById" resultMap="captureFileById" statementType="CALLABLE">
+        {CALL cfe_18.retrieve_capture_by_id(#{param1})}
+    </select>
+    <resultMap type="com.teragrep.cfe18.handlers.entities.CaptureFile" id="captureFileById">
+        <result property="tag" column="tag"/>
+        <result property="application" column="app"/>
+        <result property="index" column="captureIndex"/>
+        <result property="retention_time" column="retention_time"/>
+        <result property="source_type" column="source_type"/>
+        <result property="category" column="category"/>
+        <result property="processing_type" column="rule_name"/>
+        <result property="flow" column="flow"/>
+        <result property="protocol" column="protocol"/>
+        <result property="capture_path" column="capture_path"/>
+        <result property="tag_path" column="tag_path"/>
+        <result property="captureType" column="capture_type"/>
+    </resultMap>
+
+
+    <!-- adding new capture for cfe based -->
+    <select id="addNewCaptureFile" resultMap="insertedIDCfe" statementType="CALLABLE">
+        {CALL
+        cfe_18.add_new_capture_file(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8},#{param9},#{param10},#{param11})}
+    </select>
+    <resultMap id="insertedIDCfe" type="com.teragrep.cfe18.handlers.entities.CaptureFile">
+        <result property="id" column="last"/>
+    </resultMap>
+
+
+    <!-- relp based fetching -->
+    <select id="getCaptureRelpById" resultMap="captureRelpById" statementType="CALLABLE">
+        {CALL cfe_18.retrieve_capture_by_id(#{param1})}
+    </select>
+    <resultMap type="com.teragrep.cfe18.handlers.entities.CaptureRelp" id="captureRelpById">
+        <result property="tag" column="tag"/>
+        <result property="application" column="app"/>
+        <result property="index" column="captureIndex"/>
+        <result property="retention_time" column="retention_time"/>
+        <result property="source_type" column="source_type"/>
+        <result property="category" column="category"/>
+        <result property="flow" column="flow"/>
+        <result property="protocol" column="protocol"/>
+        <result property="captureType" column="capture_type"/>
+    </resultMap>
+
+
+    <!-- adding a new RELP based capture -->
+    <select id="addNewCaptureRelp" resultMap="insertedIDRelp" statementType="CALLABLE">
+        {CALL
+        cfe_18.add_new_capture_relp(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6},#{param7},#{param8})}
+    </select>
+    <resultMap id="insertedIDRelp" type="com.teragrep.cfe18.handlers.entities.CaptureRelp">
+        <result property="id" column="last"/>
+    </resultMap>
+
+
+    <!-- GET ALL captures -->
+    <select id="getAllCapture" resultMap="allCapture" statementType="CALLABLE">
+        {CALL cfe_18.retrieve_all_captures()}
+    </select>
+    <resultMap id="allCapture" type="com.teragrep.cfe18.handlers.entities.CaptureFile">
+        <result property="id" column="captureID"/>
+        <result property="application" column="application"/>
+        <result property="category" column="category"/>
+        <result property="source_type" column="sourcetype"/>
+        <result property="index" column="captureIndex"/>
+        <result property="retention_time" column="retention"/>
+        <result property="tag" column="tag"/>
+        <result property="flow" column="flow"/>
+        <result property="protocol" column="L7"/>
+        <result property="captureType" column="type"/>
+        <result property="captureGroup" column="groupName"/>
+        <result property="tag_path" column="tagpath"/>
+        <result property="capture_path" column="capturepath"/>
+        <result property="processing_type" column="processing_type"/>
+    </resultMap>
+
+
+    <!-- Delete -->
+    <select id="deleteCapture" statementType="CALLABLE">
+        {CALL cfe_18.remove_capture(#{param1})}
+    </select>
+
+</mapper>
+

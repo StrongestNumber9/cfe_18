@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teragrep.cfe18.StorageMapper">
+
+    <!-- ADD storage for flow -->
+    <select id="addStorageForFlow" resultMap="insertedFlowStorage" statementType="CALLABLE">
+        {CALL flow.add_storage(#{param1},#{param2})}
+    </select>
+    <resultMap id="insertedFlowStorage" type="com.teragrep.cfe18.handlers.entities.FlowStorage">
+        <result property="id" column="last"/>
+    </resultMap>
+
+
+    <!-- ADD storage for capture -->
+    <select id="addStorageForCapture" resultMap="linkedStorage" statementType="CALLABLE">
+        {CALL flow.add_storage_for_capture(#{param1},#{param2})}
+    </select>
+    <resultMap id="linkedStorage" type="com.teragrep.cfe18.handlers.entities.CaptureStorage">
+        <result property="capture_id" column="last"/>
+    </resultMap>
+
+
+    <!-- get flow storages -->
+    <select id="retrieveFlowStorages" resultMap="flowTargets" statementType="CALLABLE">
+        {CALL flow.retrieve_flow_storages(#{param1})}
+    </select>
+    <resultMap id="flowTargets" type="com.teragrep.cfe18.handlers.entities.FlowStorage">
+        <result property="storage_name" column="target"/>
+        <result property="flow" column="flow"/>
+        <result property="storage_type" column="storage_type"/>
+        <result property="id" column="last"/>
+        <result property="storage_id" column="storage_id"/>
+    </resultMap>
+
+
+    <!-- get ALL capture storages -->
+    <select id="retrieveCaptureStorages" resultMap="captureTargets" statementType="CALLABLE">
+        {CALL cfe_18.retrieve_capture_storages(#{param1})}
+    </select>
+    <resultMap id="captureTargets" type="com.teragrep.cfe18.handlers.entities.CaptureStorage">
+        <result property="storage_name" column="storage_name"/>
+        <result property="storage_id" column="storage_id"/>
+        <result property="capture_id" column="capture_id"/>
+    </resultMap>
+
+
+    <!-- GET all storages -->
+    <select id="getStorages" resultMap="allStorages" statementType="CALLABLE">
+        {CALL flow.retrieve_storages()}
+    </select>
+    <resultMap id="allStorages" type="com.teragrep.cfe18.handlers.entities.Storage">
+        <result property="target_name" column="storage_name"/>
+        <result property="cfe_type" column="storage_type"/>
+        <result property="id" column="storage_id"/>
+    </resultMap>
+
+
+    <!-- add storage standalone -->
+    <select id="addStorage" resultMap="storage" statementType="CALLABLE">
+        {CALL flow.add_storage_alone(#{param1},#{param2})}
+    </select>
+    <resultMap id="storage" type="com.teragrep.cfe18.handlers.entities.Storage">
+        <result property="id" column="last"/>
+    </resultMap>
+
+
+    <!-- Get ALL Capture Storages -->
+    <select id="getAllCaptureStorage" resultMap="allCaptureStorage" statementType="CALLABLE">
+        {CALL cfe_18.retrieve_all_capture_storages()}
+    </select>
+    <resultMap id="allCaptureStorage" type="com.teragrep.cfe18.handlers.entities.CaptureStorage">
+        <result property="capture_id" column="capture_id"/>
+        <result property="storage_id" column="storage_id"/>
+        <result property="storage_name" column="storage_name"/>
+    </resultMap>
+
+
+    <!-- Get ALL Flow Storages -->
+    <select id="getAllFlowStorage" resultMap="allFlowStorage" statementType="CALLABLE">
+        {CALL flow.retrieve_all_flow_storages()}
+    </select>
+    <resultMap id="allFlowStorage" type="com.teragrep.cfe18.handlers.entities.FlowStorage">
+        <result property="id" column="id"/>
+        <result property="flow" column="flow"/>
+        <result property="storage_name" column="storage_name"/>
+        <result property="storage_type" column="storage_type"/>
+        <result property="storage_id" column="storage_id"/>
+    </resultMap>
+
+    <!-- Delete -->
+    <select id="deleteStorage" statementType="CALLABLE">
+        {CALL flow.remove_storage(#{param1})}
+    </select>
+
+    <select id="deleteFlowStorage" statementType="CALLABLE">
+        {CALL flow.remove_flow_storage(#{param1},#{param2})}
+    </select>
+
+    <select id="deleteCaptureStorage" statementType="CALLABLE">
+        {CALL cfe_18.remove_capture_storage(#{param1},#{param2})}
+    </select>
+</mapper>

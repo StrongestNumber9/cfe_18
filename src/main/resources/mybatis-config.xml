@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <mappers>
+        <mapper resource="com/teragrep/cfe18/CaptureMapper.xml"/>
+        <mapper resource="com/teragrep/cfe18/CaptureGroupMapper.xml"/>
+        <mapper resource="com/teragrep/cfe18/FileCaptureMetaMapper.xml"/>
+        <mapper resource="com/teragrep/cfe18/FlowMapper.xml"/>
+        <mapper resource="com/teragrep/cfe18/SinkMapper.xml"/>
+        <mapper resource="com/teragrep/cfe18/HostMapper.xml"/>
+        <mapper resource="com/teragrep/cfe18/HostMetaMapper.xml"/>
+    </mappers>
+</configuration>

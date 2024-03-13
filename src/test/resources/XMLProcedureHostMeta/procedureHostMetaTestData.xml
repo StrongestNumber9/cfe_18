@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <location.host id="1" MD5="12365" fqhost="1" host_type="cfe"/>
+    <location.host id="2" MD5="12322" fqhost="2" host_type="cfe"/>
+    <location.host id="3" MD5="1323" fqhost="3" host_type="cfe"/>
+    <location.host id="4" MD5="4123" fqhost="4" host_type="cfe"/>
+    <location.host id="5" MD5="5123" fqhost="6" host_type="cfe"/>
+    <location.host id="6" MD5="6123" fqhost="7" host_type="cfe"/>
+    <cfe_00.hubs id="1" host_id="1" ip="ip?" host_type="cfe"/>
+    <cfe_00.host_type_cfe host_id="1" host_type="cfe" hub_id="1"/>
+    <cfe_00.host_type_cfe host_id="2" host_type="cfe" hub_id="1"/>
+    <cfe_03.os_type id="1" os="Linux1"/>
+    <cfe_03.os_type id="2" os="Linux2"/>
+    <cfe_03.flavor_type id="1" flavor="flavor1"/>
+    <cfe_03.flavor_type id="2" flavor="flavor2"/>
+    <cfe_03.arch_type id="1" arch="arch1"/>
+    <cfe_03.arch_type id="2" arch="arch2"/>
+    <cfe_03.release_version id="1" rel_ver="release_version1"/>
+    <cfe_03.release_version id="2" rel_ver="release_version2"/>
+    <cfe_03.host_meta id="1" release_ver_id="1" flavor_id="1" arch_id="1" os_id="1" host_id="2" hostname="host1"/>
+    <cfe_03.host_meta id="2" release_ver_id="2" flavor_id="2" arch_id="2" os_id="2" host_id="3" hostname="host2"/>
+    <cfe_03.interfaces id="1" interface="ens192"/>
+    <cfe_03.interfaces id="2" interface="ens256"/>
+    <cfe_03.ip_addresses id="1" ip_address="ip1"/>
+    <cfe_03.ip_addresses id="2" ip_address="ip2"/>
+    <cfe_03.ip_addresses id="3" ip_address="ip3"/>
+    <cfe_03.host_meta_x_ip id="1" host_meta_id="1" ip_id="1"/>
+    <cfe_03.host_meta_x_ip id="2" host_meta_id="1" ip_id="2"/>
+    <cfe_03.host_meta_x_ip id="3" host_meta_id="1" ip_id="3"/>
+    <cfe_03.host_meta_x_interface id="1" host_meta_id="1" interface_id="1"/>
+    <cfe_03.host_meta_x_interface id="2" host_meta_id="1" interface_id="2"/>
+</dataset>

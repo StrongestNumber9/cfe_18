@@ -1,18 +1,14 @@
-= CFE-18
+= CFE_18
 
 Master Data Management System (MDMS) is a tool for handling master data.
-Takes advantage of relational-database standardization and MariaDB system-versioning.
-Uses flyway migration strategy to ensure fault-free deployment and presents data through Swagger-ui via RESTful endpoints.
 
-// Before publishing your new repository:
-// 1. Write the readme file
-// 2. Update the issues link in Contributing section in the readme file
-// 3. Update the discussion link in config.yml file in .github/ISSUE_TEMPLATE directory
+Takes advantage of relational-database standardization and MariaDB system-versioning.
+
+Uses flyway migration strategy to ensure fault-free deployment and presents data through Swagger-ui via RESTful endpoints.
 
 == Features
 
-// List your project's features
-* Can be used with Fail-Safe internal components to manage integrations
+* Can be used to manage integrations
 * Schema structure can be modified to accommodate user needs
 
 == Documentation
@@ -21,18 +17,14 @@ See the official documentation on https://docs.teragrep.com[docs.teragrep.com].
 
 == Limitations
 
-// If your project has limitations, please list them. Otherwise remove this section.
 * Java 8
 
 == How to [compile/use/implement]
 
-// add instructions how people can start to use your project
 . Setup database according to end-user needs
 . Can be deployed using https://tomcat.apache.org/tomcat-9.0-doc/deployer-howto.html[tomcat]/JBoss
 
 == Contributing
-
-// Change the repository name in the issues link to match with your project's name
 
 You can involve yourself with our project by https://github.com/teragrep/cfe_18/issues/new/choose[opening an issue] or submitting a pull request.
 

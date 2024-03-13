@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teragrep.cfe18.HostGroupMapper">
+
+    <!-- Fetch host group by name -->
+    <select id="getHostGroupByName" resultMap="HostGroupByName" statementType="CALLABLE">
+        {CALL location.retrieve_host_group_details(#{host_group_name})}
+    </select>
+    <resultMap type="com.teragrep.cfe18.handlers.entities.HostGroup" id="HostGroupByName">
+        <result property="md5" column="MD5"/>
+        <result property="host_id" column="host_id"/>
+        <result property="host_group_name" column="group_name"/>
+        <result property="host_group_type" column="host_type"/>
+        <result property="id" column="host_group_id"/>
+    </resultMap>
+
+
+    <!-- New host group -->
+    <select id="addNewHostGroup" resultMap="insertedID" statementType="CALLABLE">
+        {CALL
+        location.add_host_group_with_host(#{param1},#{param2})}
+    </select>
+    <resultMap id="insertedID" type="com.teragrep.cfe18.handlers.entities.HostGroup">
+        <result property="host_group_name" column="name"/>
+        <result property="id" column="last"/>
+    </resultMap>
+
+
+    <!-- GET ALL Host Groups -->
+    <select id="getAllHostGroup" resultMap="allHostGroup" statementType="CALLABLE">
+        {CALL location.retrieve_all_host_groups()}
+    </select>
+    <resultMap id="allHostGroup" type="com.teragrep.cfe18.handlers.entities.HostGroup">
+        <result property="id" column="host_group_id"/>
+        <result property="host_group_name" column="host_group_name"/>
+        <result property="host_group_type" column="host_group_type"/>
+        <result property="host_id" column="host_id"/>
+        <result property="md5" column="host_md5"/>
+    </resultMap>
+
+
+    <!-- Delete -->
+    <select id="deleteHostGroup" statementType="CALLABLE">
+        {CALL location.remove_host_group(#{param1})}
+    </select>
+
+</mapper>
+

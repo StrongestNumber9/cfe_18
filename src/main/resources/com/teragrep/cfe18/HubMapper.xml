@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teragrep.cfe18.HubMapper">
+
+    <!-- Retrieve Hub by ID -->
+    <select id="getHubById" resultMap="Hub" statementType="CALLABLE">
+        {CALL location.retrieve_cfe_hub_details(#{param1})}
+    </select>
+    <resultMap type="com.teragrep.cfe18.handlers.entities.Hub" id="Hub">
+        <result property="hub_id" column="hub_id"/>
+        <result property="host_id" column="host_id"/>
+        <result property="fqHost" column="hub_fq_host"/>
+        <result property="ip" column="ip"/>
+        <result property="md5" column="md5"/>
+    </resultMap>
+
+
+    <!-- Insert hub -->
+    <select id="addHub" resultMap="hubId" statementType="CALLABLE">
+        {CALL location.host_add_cfe_hub(#{param1},#{param2},#{param3})}
+    </select>
+    <resultMap id="hubId" type="com.teragrep.cfe18.handlers.entities.Hub">
+        <result property="hub_id" column="last"/>
+    </resultMap>
+
+
+    <!-- GET ALL Hubs -->
+    <select id="getAllHub" resultMap="allHub" statementType="CALLABLE">
+        {CALL cfe_00.retrieve_all_hubs()}
+    </select>
+    <resultMap id="allHub" type="com.teragrep.cfe18.handlers.entities.Hub">
+        <result property="host_id" column="host_id"/>
+        <result property="fqHost" column="hub_fq"/>
+        <result property="md5" column="hub_md5"/>
+        <result property="ip" column="ip"/>
+        <result property="hub_id" column="hub_id"/>
+    </resultMap>
+
+
+    <!-- Delete -->
+    <select id="deleteHub" statementType="CALLABLE">
+        {CALL cfe_00.remove_hub(#{param1})}
+    </select>
+
+</mapper>
+

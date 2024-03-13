@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <location.host id="1" MD5="12365" fqhost="1" host_type="cfe"/>
+    <location.host id="2" MD5="12322" fqhost="2" host_type="manual"/>
+    <location.host id="3" MD5="1323" fqhost="3" host_type="manual"/>
+    <location.host id="4" MD5="4123" fqhost="4" host_type="manual"/>
+    <location.host id="5" MD5="5123" fqhost="6" host_type="manual"/>
+    <location.host id="6" MD5="6123" fqhost="7" host_type="manual"/>
+    <location.host id="7" MD5="7123" fqhost="8" host_type="manual"/>
+    <location.host id="8" MD5="71233" fqhost="11" host_type="manual"/>
+    <location.host id="9" MD5="723" fqhost="10" host_type="manual"/>
+    <location.host id="10" MD5="712362" fqhost="12" host_type="manual"/>
+    <location.host id="11" MD5="712213123" fqhost="15" host_type="manual"/>
+    <location.host id="12" MD5="712653" fqhost="13" host_type="manual"/>
+    <location.host id="15" MD5="75757122173123" fqhost="20" host_type="manual"/>
+    <location.host id="16" MD5="712" fqhost="9" host_type="manual"/>
+    <location.host id="17" MD5="71211233" fqhost="14" host_type="manual"/>
+    <location.host id="21" MD5="7142213123" fqhost="16" host_type="manual"/>
+    <location.host id="22" MD5="7125213123" fqhost="17" host_type="manual"/>
+    <location.host id="23" MD5="7122613123" fqhost="18" host_type="manual"/>
+    <location.host id="24" MD5="7122173123" fqhost="19" host_type="manual"/>
+    <location.host id="25" MD5="relpmd5" fqhost="relpfqhost" host_type="relp"/>
+    <location.host id="26" MD5="ReliantMD5" fqhost="ReliantFqHost" host_type="relp"/>
+    <cfe_00.hubs id="1" host_id="1" ip="ip?" host_type="cfe"/>
+    <cfe_00.host_type_cfe host_id="1" host_type="cfe" hub_id="1"/>
+</dataset>
