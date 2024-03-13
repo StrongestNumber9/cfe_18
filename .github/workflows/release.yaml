@@ -1,6 +1,5 @@
 name: Publish
 on:
-  push: # DEBUG Remove me later
   release:
     types: [created]
 
