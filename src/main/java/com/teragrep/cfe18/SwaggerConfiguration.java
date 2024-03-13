@@ -1,5 +1,5 @@
 /*
- * Master data management system (MDMS) CFE-18
+ * Master data management system (MDMS) CFE_18
  * Copyright (C) 2021  Suomen Kanuuna Oy
  *
  * This program is free software: you can redistribute it and/or modify
@@ -77,7 +77,7 @@ public class SwaggerConfiguration {
                         )
                 )
                 .info(new Info()
-                        .title("CFE-18 API")
+                        .title("CFE_18 API")
                         .version(appVersion)
                         .description(appDesciption)
                 );

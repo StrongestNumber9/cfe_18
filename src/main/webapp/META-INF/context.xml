@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Context reloadable="true" privileged="false">
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
-    <Parameter name="spring.config.location" value="file:/etc/tomcat/Catalina/localhost/cfe-18/application.properties"/>
-    <Parameter name="logging.config" value="file:/etc/tomcat/Catalina/localhost/cfe-18/log4j2.xml"/>
+    <Parameter name="spring.config.location" value="file:/etc/tomcat/Catalina/localhost/cfe_18/application.properties"/>
+    <Parameter name="logging.config" value="file:/etc/tomcat/Catalina/localhost/cfe_18/log4j2.xml"/>
 </Context>
 

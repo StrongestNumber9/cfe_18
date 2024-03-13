@@ -6,8 +6,8 @@
   <groupId>com.teragrep</groupId>
   <artifactId>cfe_18</artifactId>
   <version>${revision}${sha1}${changelist}</version>
-  <name>cfe-18</name>
-  <description>CFE-18 Integration Data Manager</description>
+  <name>cfe_18</name>
+  <description>CFE_18 Integration Data Manager</description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -206,7 +206,7 @@
   </dependencies>
   <build>
     <directory>${project.basedir}/target</directory>
-    <finalName>cfe-18</finalName>
+    <finalName>cfe_18</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -271,7 +271,7 @@
             <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
               <notes>Also allow the license url to be https.</notes>
               <patterns>
-                <pattern>Master data management system (MDMS) CFE-18</pattern>
+                <pattern>Master data management system (MDMS) CFE_18</pattern>
               </patterns>
             </license>
           </licenses>
