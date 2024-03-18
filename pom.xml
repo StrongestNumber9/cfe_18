@@ -7,7 +7,7 @@
   <artifactId>cfe_18</artifactId>
   <version>${revision}${sha1}${changelist}</version>
   <name>cfe_18</name>
-  <description>CFE_18 Integration Data Manager</description>
+  <description>Main Data Management System cfe_18</description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -271,7 +271,7 @@
             <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
               <notes>Also allow the license url to be https.</notes>
               <patterns>
-                <pattern>Master data management system (MDMS) CFE_18</pattern>
+                <pattern>Main data management system (MDMS) cfe_18</pattern>
               </patterns>
             </license>
           </licenses>

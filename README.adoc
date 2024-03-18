@@ -1,6 +1,6 @@
-= CFE_18
+= cfe_18
 
-Master Data Management System (MDMS) is a tool for handling master data.
+Main Data Management System (MDMS) is a tool for handling master data.
 
 Takes advantage of relational-database standardization and MariaDB system-versioning.
 
