@@ -1,1 +1,1 @@
-var branches = ["add_techdocs", "main"]
+var branches = ["add_mvn_01_plugins", "add_techdocs", "main"]
